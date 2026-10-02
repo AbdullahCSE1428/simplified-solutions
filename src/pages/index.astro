@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 
 const EMAIL = 'abdullahcse1428@gmail.com';
+// Free key from https://web3forms.com (enter EMAIL there). Leave empty to fall back to mailto.
+const FORM_KEY = '';
 
 const pains = [
   'Stock counts that never match what is actually on the shelf',
@@ -178,11 +180,12 @@ const faqs = [
             <a class="mail" href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </div>
           <form id="contact-form" aria-label="Contact form">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" />
             <label>Your name<input name="name" type="text" autocomplete="name" required /></label>
             <label>Business type<input name="business" type="text" placeholder="e.g. cafe, pharmacy, hardware store" /></label>
             <label>What is your biggest pain point?<textarea name="message" required></textarea></label>
-            <button class="btn btn-primary" type="submit">Send by email</button>
-            <p class="fine">This opens your email app with the message ready to send to {EMAIL}.</p>
+            <button class="btn btn-primary" type="submit">{FORM_KEY ? 'Send message' : 'Send by email'}</button>
+            <p class="fine" id="form-note" role="status">{FORM_KEY ? 'We reply by email, usually within one business day.' : `This opens your email app with the message ready to send to ${EMAIL}.`}</p>
           </form>
         </div>
       </div>
@@ -196,12 +199,33 @@ const faqs = [
     </div>
   </footer>
 
-  <script is:inline define:vars={{ EMAIL }}>
-    document.getElementById('contact-form').addEventListener('submit', function (e) {
+  <script is:inline define:vars={{ EMAIL, FORM_KEY }}>
+    var form = document.getElementById('contact-form');
+    var note = document.getElementById('form-note');
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var f = new FormData(e.target);
-      var body = 'Name: ' + f.get('name') + '\nBusiness type: ' + (f.get('business') || '-') + '\n\n' + f.get('message');
-      location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Trial run enquiry from ' + f.get('name')) + '&body=' + encodeURIComponent(body);
+      var f = new FormData(form);
+      var subject = 'Trial run enquiry from ' + f.get('name');
+      var mailto = function () {
+        var body = 'Name: ' + f.get('name') + '\nBusiness type: ' + (f.get('business') || '-') + '\n\n' + f.get('message');
+        location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      };
+      if (!FORM_KEY) return mailto();
+      var btn = form.querySelector('button');
+      btn.disabled = true; btn.textContent = 'Sending...';
+      f.append('access_key', FORM_KEY);
+      f.append('subject', subject);
+      fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { Accept: 'application/json' }, body: f })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (!d.success) throw new Error(d.message);
+          form.reset(); btn.textContent = 'Sent. Thank you!';
+          note.textContent = 'Thanks! We will get back to you shortly.';
+        })
+        .catch(function () {
+          btn.disabled = false; btn.textContent = 'Send message';
+          note.textContent = 'Could not send. Please email us directly at ' + EMAIL + '.';
+        });
     });
   </script>
 </Base>
