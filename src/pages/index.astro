@@ -1,0 +1,207 @@
+---
+import Base from '../layouts/Base.astro';
+
+const EMAIL = 'abdullahcse1428@gmail.com';
+
+const pains = [
+  'Stock counts that never match what is actually on the shelf',
+  'A till system that is slow, dated, or does not fit how you sell',
+  'Spreadsheets and paper notebooks holding your business together',
+  'Off-the-shelf software with a hundred features you do not need and the one you do missing',
+  'Monthly fees for tools that never quite adapt to you',
+  'No idea which products make money until the end of the month',
+];
+
+const features = [
+  { icon: '📦', title: 'Inventory management', text: 'Real-time stock levels, low-stock alerts, suppliers, purchase orders and batch or expiry tracking, shaped around your products.' },
+  { icon: '🧾', title: 'Point of Sale', text: 'A fast, touch-friendly checkout with barcode scanning, discounts, split payments and receipts. Works the way your counter works.' },
+  { icon: '📊', title: 'Reports that make sense', text: 'Daily sales, best sellers, profit margins and stock value. Clear numbers, no accounting degree required.' },
+  { icon: '👥', title: 'Customers & staff', text: 'Customer history, loyalty, staff logins and permissions so everyone sees only what they should.' },
+  { icon: '🔌', title: 'Hardware friendly', text: 'Receipt printers, barcode scanners, cash drawers and tablets. We build for what you already own.' },
+  { icon: '🛡️', title: 'Backups & security', text: 'Your data is backed up and protected, so a dead laptop never means a dead business.' },
+];
+
+const steps = [
+  { t: 'Listen', p: 'We learn how your business runs and where it hurts. No jargon, just a conversation about your pain points.' },
+  { t: 'Free trial run', p: 'We build a working version around your needs and put it in your hands to try with real day-to-day use.' },
+  { t: 'Refine on your feedback', p: 'You tell us what is off or missing. We fix it and add features, then repeat until it fits like a glove.' },
+  { t: 'Go live & stay supported', p: 'Once you say "Yes, this works for me", we launch and keep looking after it with maintenance and support.' },
+];
+
+const faqs = [
+  ['What does the trial run involve?', 'We build a working first version based on our conversation and let you use it in your real business. If it is not right, we change it. You only move forward once you are happy.'],
+  ['How long until I can see something working?', 'Because we build lean, fast-loading software on a modern stack, first working versions come together quickly. Days to a couple of weeks, not months, depending on scope.'],
+  ['Do I need special hardware?', 'No. It runs in a normal browser on a laptop, tablet or phone, and works with common receipt printers and barcode scanners.'],
+  ['What if I need changes later?', 'That is expected. Maintenance and support is part of how we work, and we add features as your business grows.'],
+  ['Who owns the software and my data?', 'Your data is yours. We will walk through ownership and hosting options with you up front so there are no surprises.'],
+  ['Why not just buy off-the-shelf POS software?', 'Off-the-shelf tools make you adapt to them. We adapt the software to you, with only the features you need, and the speed that comes from not carrying everything else.'],
+];
+---
+<Base
+  title="Simplified Solutions | Custom Inventory & POS Software for Small Businesses"
+  description="Custom inventory management and point-of-sale software for local small businesses. Modern design, fast delivery, free trial run, and ongoing support until it works for you."
+>
+  <header class="site">
+    <div class="wrap nav">
+      <a class="logo" href="#top" aria-label="Simplified Solutions home"><span class="logo-mark">S</span>Simplified Solutions</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#problems">Problems</a></li>
+          <li><a href="#solutions">What we build</a></li>
+          <li><a href="#process">How it works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary" href="#contact">Get a free trial</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Custom software for local businesses</p>
+          <h1>Software built around <span class="grad">your business,</span> not the other way round.</h1>
+          <p class="lead">We design and build custom inventory management and point-of-sale software for small businesses. It is modern, ultra-fast, and shaped to fix your actual pain points.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Start your free trial run</a>
+            <a class="btn btn-ghost" href="#process">See how it works</a>
+          </div>
+          <ul class="badges">
+            <li>Free trial run</li>
+            <li>Changes until you are happy</li>
+            <li>Ongoing support</li>
+          </ul>
+        </div>
+        <div class="mock" role="img" aria-label="Illustration of a point of sale screen with product tiles, a cart and a low stock alert">
+          <div class="mock-bar"><i></i><i></i><i></i></div>
+          <div class="mock-body">
+            <div class="tiles">
+              <div class="tile"><b>Espresso</b><span>$3.50 · 42 left</span></div>
+              <div class="tile"><b>Croissant</b><span>$2.80 · 18 left</span></div>
+              <div class="tile"><b>Iced Latte</b><span>$4.20 · 30 left</span></div>
+              <div class="tile"><b>Banana Bread</b><span>$3.00 · 6 left</span></div>
+            </div>
+            <div class="cart">
+              <div><span>Espresso ×2</span><span>$7.00</span></div>
+              <div><span>Croissant</span><span>$2.80</span></div>
+              <div class="total"><span>Total</span><span>$9.80</span></div>
+              <div class="pay">Charge</div>
+            </div>
+          </div>
+          <div class="stock"><span>Banana Bread is running low</span><em>6 left</em></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problems" class="alt">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Sound familiar?</p>
+          <h2>Running a small business is hard enough without fighting your software.</h2>
+          <p class="lead">Most tools are built for someone else's business. We start with yours.</p>
+        </div>
+        <ul class="pain reveal">
+          {pains.map((p) => <li>{p}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section id="solutions">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">What we build</p>
+          <h2>One system for your stock, your till and your numbers.</h2>
+          <p class="lead">Every project is custom. These are the building blocks we usually start from, then tailor to you.</p>
+        </div>
+        <div class="grid c3">
+          {features.map((f) => (
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">{f.icon}</div>
+              <h3>{f.title}</h3>
+              <p>{f.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="alt">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">How we work</p>
+          <h2>We keep going until you say <span class="grad">"Yes, this works for me."</span></h2>
+          <p class="lead">No big upfront gamble. You try it, you shape it, and you only commit when it genuinely fits.</p>
+        </div>
+        <ol class="steps">
+          {steps.map((s) => (
+            <li class="reveal"><h3>{s.t}</h3><p>{s.p}</p></li>
+          ))}
+        </ol>
+        <p class="promise reveal">Your feedback drives every change. That is the whole point.</p>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Why Simplified Solutions</p>
+          <h2>Modern, fast and personal.</h2>
+        </div>
+        <div class="grid c3">
+          <article class="card reveal"><div class="icon" aria-hidden="true">⚡</div><h3>Ultra-fast</h3><p>Lean, modern technology means pages that load instantly and a till that never keeps customers waiting.</p></article>
+          <article class="card reveal"><div class="icon" aria-hidden="true">🎨</div><h3>Modern design</h3><p>Clean, intuitive screens your staff can learn in minutes, on any device from phone to counter tablet.</p></article>
+          <article class="card reveal"><div class="icon" aria-hidden="true">🤝</div><h3>Maintenance & support</h3><p>We do not disappear after launch. Updates, fixes and new features are part of the relationship.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="alt">
+      <div class="wrap" style="max-width: 760px">
+        <div class="section-head reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Questions you might have</h2>
+        </div>
+        {faqs.map(([q, a]) => (
+          <details class="reveal"><summary>{q}</summary><p>{a}</p></details>
+        ))}
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-card reveal">
+          <div>
+            <p class="eyebrow">Let's talk</p>
+            <h2>Tell us what is slowing your business down.</h2>
+            <p class="lead">Share a few lines about your business and your biggest headache. We will get back to you and set up your free trial run.</p>
+            <a class="mail" href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          </div>
+          <form id="contact-form" aria-label="Contact form">
+            <label>Your name<input name="name" type="text" autocomplete="name" required /></label>
+            <label>Business type<input name="business" type="text" placeholder="e.g. cafe, pharmacy, hardware store" /></label>
+            <label>What is your biggest pain point?<textarea name="message" required></textarea></label>
+            <button class="btn btn-primary" type="submit">Send by email</button>
+            <p class="fine">This opens your email app with the message ready to send to {EMAIL}.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>© {new Date().getFullYear()} Simplified Solutions. Custom inventory and POS software.</span>
+      <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+    </div>
+  </footer>
+
+  <script is:inline define:vars={{ EMAIL }}>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = new FormData(e.target);
+      var body = 'Name: ' + f.get('name') + '\nBusiness type: ' + (f.get('business') || '-') + '\n\n' + f.get('message');
+      location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Trial run enquiry from ' + f.get('name')) + '&body=' + encodeURIComponent(body);
+    });
+  </script>
+</Base>
