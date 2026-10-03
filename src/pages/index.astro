@@ -14,44 +14,73 @@ const pains = [
   'No idea which products make money until the end of the month',
 ];
 
+const services = [
+  { icon: '🛒', title: 'POS & inventory', text: 'Our specialty. Fast checkout, live stock levels, suppliers and reports, shaped around how your shop actually runs.', href: '#pos', flagship: true },
+  { icon: '🌐', title: 'Custom websites', text: 'Modern, mobile-first sites that load instantly and make a great first impression.', href: '#websites' },
+  { icon: '🧩', title: 'Web apps & internal tools', text: 'Booking systems, dashboards, order trackers, the custom tool you wish existed.', href: '#websites' },
+  { icon: '🛡️', title: 'Care & support', text: 'Hosting help, updates, backups and fixes, so it keeps working after launch.', href: '#security' },
+];
+
 const features = [
   { icon: '📦', title: 'Inventory management', text: 'Real-time stock levels, low-stock alerts, suppliers, purchase orders and batch or expiry tracking, shaped around your products.' },
   { icon: '🧾', title: 'Point of Sale', text: 'A fast, touch-friendly checkout with barcode scanning, discounts, split payments and receipts. Works the way your counter works.' },
   { icon: '📊', title: 'Reports that make sense', text: 'Daily sales, best sellers, profit margins and stock value. Clear numbers, no accounting degree required.' },
   { icon: '👥', title: 'Customers & staff', text: 'Customer history, loyalty, staff logins and permissions so everyone sees only what they should.' },
   { icon: '🔌', title: 'Hardware friendly', text: 'Receipt printers, barcode scanners, cash drawers and tablets. We build for what you already own.' },
-  { icon: '🛡️', title: 'Backups & security', text: 'Your data is backed up and protected, so a dead laptop never means a dead business.' },
+  { icon: '💾', title: 'Backups built in', text: 'Your data is backed up, so a dead laptop never means a dead business.' },
+];
+
+const webFeatures = [
+  { icon: '⚡', title: 'Ultra-fast by default', text: 'Lean, static-first builds that load in a blink on any phone or connection. Speed helps customers and search rankings.' },
+  { icon: '🎨', title: 'Modern, on-brand design', text: 'Clean, confident design tailored to your business, not a recycled template.' },
+  { icon: '📱', title: 'Mobile-first', text: 'Most of your visitors are on a phone. We design for that first and scale up.' },
+  { icon: '🔎', title: 'Findable', text: 'Sensible structure, metadata and performance so local customers can actually find you.' },
+  { icon: '✍️', title: 'Easy to update', text: 'Change your hours, prices or photos without calling a developer every time.' },
+  { icon: '♿', title: 'Accessible', text: 'Readable, keyboard-friendly and usable by everyone, which is also better for everyone.' },
+];
+
+const security = [
+  ['HTTPS everywhere', 'Encrypted connections on every page and form.'],
+  ['Validate everything', 'User input is checked and sanitised before it goes anywhere near your data.'],
+  ['Least-privilege access', 'Staff roles and permissions, so people only see and change what they need to.'],
+  ['Secrets stay secret', 'Passwords and keys live in secure configuration, never in the code.'],
+  ['Keep things updated', 'Dependencies are kept current so known vulnerabilities do not linger.'],
+  ['Backups & recovery', 'Regular backups and a plan to restore, so mistakes and failures are survivable.'],
+  ['Collect less data', 'We only store what the business needs, which means less to protect.'],
+  ['Honest conversations', 'We tell you plainly what is covered and what is not, with no fine print.'],
 ];
 
 const steps = [
-  { t: 'Listen', p: 'We learn how your business runs and where it hurts. No jargon, just a conversation about your pain points.' },
-  { t: 'Free trial run', p: 'We build a working version around your needs and put it in your hands to try with real day-to-day use.' },
+  { t: 'Listen', p: 'We learn how your business runs and where it hurts. No jargon, just a conversation about what you need.' },
+  { t: 'Free trial run', p: 'We build a working preview around your needs and put it in your hands to try for real.' },
   { t: 'Refine on your feedback', p: 'You tell us what is off or missing. We fix it and add features, then repeat until it fits like a glove.' },
   { t: 'Go live & stay supported', p: 'Once you say "Yes, this works for me", we launch and keep looking after it with maintenance and support.' },
 ];
 
 const faqs = [
-  ['What does the trial run involve?', 'We build a working first version based on our conversation and let you use it in your real business. If it is not right, we change it. You only move forward once you are happy.'],
+  ['Do you only build POS and inventory systems?', 'They are our specialty and a big part of what we do, but we also build custom websites, web apps and internal tools. If it needs to look modern, load fast and be built securely, we can help.'],
+  ['What does the trial run involve?', 'We build a working first version based on our conversation and let you use it for real. If it is not right, we change it. You only move forward once you are happy.'],
   ['How long until I can see something working?', 'Because we build lean, fast-loading software on a modern stack, first working versions come together quickly. Days to a couple of weeks, not months, depending on scope.'],
-  ['Do I need special hardware?', 'No. It runs in a normal browser on a laptop, tablet or phone, and works with common receipt printers and barcode scanners.'],
+  ['Do I need special hardware for POS?', 'No. It runs in a normal browser on a laptop, tablet or phone, and works with common receipt printers and barcode scanners.'],
+  ['How do you handle security?', 'Security is part of how we build, not an add-on: encrypted connections, validated input, role-based access, secure handling of secrets, regular updates and backups. See the security section above for details.'],
   ['What if I need changes later?', 'That is expected. Maintenance and support is part of how we work, and we add features as your business grows.'],
   ['Who owns the software and my data?', 'Your data is yours. We will walk through ownership and hosting options with you up front so there are no surprises.'],
-  ['Why not just buy off-the-shelf POS software?', 'Off-the-shelf tools make you adapt to them. We adapt the software to you, with only the features you need, and the speed that comes from not carrying everything else.'],
+  ['Why not just use off-the-shelf software or a website builder?', 'Off-the-shelf tools make you adapt to them. We adapt to you, with only the features you need, and the speed that comes from not carrying everything else.'],
 ];
 ---
 <Base
-  title="Simplified Solutions | Custom Inventory & POS Software for Small Businesses"
-  description="Custom inventory management and point-of-sale software for local small businesses. Modern design, fast delivery, free trial run, and ongoing support until it works for you."
+  title="Simplified Solutions | Custom POS, Inventory Software & Websites"
+  description="Custom POS, inventory software, websites and web apps for small businesses. Modern design, ultra-fast, built securely, with a free trial run and ongoing support until it works for you."
 >
   <header class="site">
     <div class="wrap nav">
       <a class="logo" href="#top" aria-label="Simplified Solutions home"><span class="logo-mark">S</span>Simplified Solutions</a>
       <nav aria-label="Main">
         <ul>
-          <li><a href="#problems">Problems</a></li>
-          <li><a href="#solutions">What we build</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pos">POS &amp; inventory</a></li>
+          <li><a href="#websites">Websites</a></li>
           <li><a href="#process">How it works</a></li>
-          <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
       <a class="btn btn-primary" href="#contact">Get a free trial</a>
@@ -62,16 +91,17 @@ const faqs = [
     <section class="hero" id="top">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">Custom software for local businesses</p>
-          <h1>Software built around <span class="grad">your business,</span> not the other way round.</h1>
-          <p class="lead">We design and build custom inventory management and point-of-sale software for small businesses. It is modern, ultra-fast, and shaped to fix your actual pain points.</p>
+          <p class="eyebrow">Custom software &amp; websites for local businesses</p>
+          <h1>Fast, modern and secure, <span class="grad">built around your business.</span></h1>
+          <p class="lead">We build custom POS and inventory systems, websites and web apps for small businesses. You try a working version first, and we keep refining until it genuinely fits.</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#contact">Start your free trial run</a>
-            <a class="btn btn-ghost" href="#process">See how it works</a>
+            <a class="btn btn-ghost" href="#services">See what we build</a>
           </div>
           <ul class="badges">
             <li>Free trial run</li>
             <li>Changes until you are happy</li>
+            <li>Secure by design</li>
             <li>Ongoing support</li>
           </ul>
         </div>
@@ -94,28 +124,44 @@ const faqs = [
           <div class="stock"><span>Banana Bread is running low</span><em>6 left</em></div>
         </div>
       </div>
+      <div class="wrap paths" aria-label="Choose what you need">
+        <a class="path" href="#pos"><span class="icon" aria-hidden="true">🛒</span><span><b>I run a shop</b><small>I need POS and inventory software</small></span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="path" href="#websites"><span class="icon" aria-hidden="true">🌐</span><span><b>I need a website</b><small>Or a custom web app or tool</small></span><span class="arrow" aria-hidden="true">→</span></a>
+      </div>
     </section>
 
-    <section id="problems" class="alt">
+    <section id="services" class="alt">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="eyebrow">Sound familiar?</p>
-          <h2>Running a small business is hard enough without fighting your software.</h2>
+          <p class="eyebrow">What we build</p>
+          <h2>One partner for the software your business runs on.</h2>
+          <p class="lead">From the till at your counter to the website your customers find first, built to the same standard.</p>
+        </div>
+        <div class="grid c4">
+          {services.map((x) => (
+            <a class={`card service reveal${x.flagship ? ' flagship' : ''}`} href={x.href}>
+              {x.flagship && <span class="tag">Our specialty</span>}
+              <div class="icon" aria-hidden="true">{x.icon}</div>
+              <h3>{x.title}</h3>
+              <p>{x.text}</p>
+              <span class="more">Learn more →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="pos">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">POS &amp; inventory</p>
+          <h2>Running a shop is hard enough without fighting your software.</h2>
           <p class="lead">Most tools are built for someone else's business. We start with yours.</p>
         </div>
         <ul class="pain reveal">
           {pains.map((p) => <li>{p}</li>)}
         </ul>
-      </div>
-    </section>
-
-    <section id="solutions">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <p class="eyebrow">What we build</p>
-          <h2>One system for your stock, your till and your numbers.</h2>
-          <p class="lead">Every project is custom. These are the building blocks we usually start from, then tailor to you.</p>
-        </div>
+        <h3 class="sub reveal">One system for your stock, your till and your numbers</h3>
         <div class="grid c3">
           {features.map((f) => (
             <article class="card reveal">
@@ -128,7 +174,39 @@ const faqs = [
       </div>
     </section>
 
-    <section id="process" class="alt">
+    <section id="websites" class="alt">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Websites &amp; web apps</p>
+          <h2>A website that looks sharp, loads instantly and does a job.</h2>
+          <p class="lead">Business sites, landing pages, online catalogues, booking and enquiry flows, dashboards and custom tools, all built to be fast, secure and easy to live with.</p>
+        </div>
+        <div class="grid c3">
+          {webFeatures.map((f) => (
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">{f.icon}</div>
+              <h3>{f.title}</h3>
+              <p>{f.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="security">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Security</p>
+          <h2>Secure by design, not as an afterthought.</h2>
+          <p class="lead">Whether it is a till or a contact page, this is how we build everything.</p>
+        </div>
+        <ul class="sec">
+          {security.map(([t, d]) => <li class="reveal"><b>{t}</b><span>{d}</span></li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section id="process">
       <div class="wrap">
         <div class="section-head reveal">
           <p class="eyebrow">How we work</p>
@@ -144,21 +222,21 @@ const faqs = [
       </div>
     </section>
 
-    <section id="why">
+    <section id="why" class="alt">
       <div class="wrap">
         <div class="section-head reveal">
           <p class="eyebrow">Why Simplified Solutions</p>
           <h2>Modern, fast and personal.</h2>
         </div>
         <div class="grid c3">
-          <article class="card reveal"><div class="icon" aria-hidden="true">⚡</div><h3>Ultra-fast</h3><p>Lean, modern technology means pages that load instantly and a till that never keeps customers waiting.</p></article>
+          <article class="card reveal"><div class="icon" aria-hidden="true">⚡</div><h3>Ultra-fast</h3><p>Lean, modern technology means pages that load instantly and a till or website that never keeps customers waiting.</p></article>
           <article class="card reveal"><div class="icon" aria-hidden="true">🎨</div><h3>Modern design</h3><p>Clean, intuitive screens your staff can learn in minutes, on any device from phone to counter tablet.</p></article>
           <article class="card reveal"><div class="icon" aria-hidden="true">🤝</div><h3>Maintenance & support</h3><p>We do not disappear after launch. Updates, fixes and new features are part of the relationship.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="faq" class="alt">
+    <section id="faq">
       <div class="wrap" style="max-width: 760px">
         <div class="section-head reveal">
           <p class="eyebrow">FAQ</p>
@@ -175,15 +253,16 @@ const faqs = [
         <div class="contact-card reveal">
           <div>
             <p class="eyebrow">Let's talk</p>
-            <h2>Tell us what is slowing your business down.</h2>
-            <p class="lead">Share a few lines about your business and your biggest headache. We will get back to you and set up your free trial run.</p>
+            <h2>Tell us what you need.</h2>
+            <p class="lead">Share a few lines about your business and what you would like built or fixed. We will get back to you and set up your free trial run.</p>
             <a class="mail" href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </div>
           <form id="contact-form" aria-label="Contact form">
             <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" />
             <label>Your name<input name="name" type="text" autocomplete="name" required /></label>
+            <label>What do you need?<select name="need"><option>POS &amp; inventory system</option><option>Website</option><option>Web app or custom tool</option><option>Not sure yet</option></select></label>
             <label>Business type<input name="business" type="text" placeholder="e.g. cafe, pharmacy, hardware store" /></label>
-            <label>What is your biggest pain point?<textarea name="message" required></textarea></label>
+            <label>Tell us a bit more<textarea name="message" required></textarea></label>
             <button class="btn btn-primary" type="submit">{FORM_KEY ? 'Send message' : 'Send by email'}</button>
             <p class="fine" id="form-note" role="status">{FORM_KEY ? 'We reply by email, usually within one business day.' : `This opens your email app with the message ready to send to ${EMAIL}.`}</p>
           </form>
@@ -194,7 +273,7 @@ const faqs = [
 
   <footer>
     <div class="wrap foot">
-      <span>© {new Date().getFullYear()} Simplified Solutions. Custom inventory and POS software.</span>
+      <span>© {new Date().getFullYear()} Simplified Solutions. Custom POS, inventory software &amp; websites.</span>
       <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
     </div>
   </footer>
@@ -207,7 +286,7 @@ const faqs = [
       var f = new FormData(form);
       var subject = 'Trial run enquiry from ' + f.get('name');
       var mailto = function () {
-        var body = 'Name: ' + f.get('name') + '\nBusiness type: ' + (f.get('business') || '-') + '\n\n' + f.get('message');
+        var body = 'Name: ' + f.get('name') + '\nNeed: ' + f.get('need') + '\nBusiness type: ' + (f.get('business') || '-') + '\n\n' + f.get('message');
         location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       };
       if (!FORM_KEY) return mailto();
