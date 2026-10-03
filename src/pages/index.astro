@@ -15,7 +15,7 @@ const pains = [
 ];
 
 const services = [
-  { icon: '🛒', title: 'POS & inventory', text: 'Our specialty. Fast checkout, live stock levels, suppliers and reports, shaped around how your shop actually runs.', href: '#pos', flagship: true },
+  { icon: '🛒', title: 'POS & inventory', text: 'Our specialty. Fast checkout, live stock levels, suppliers and reports, with a ready-made medicine catalogue for pharmacies.', href: '#pos', flagship: true },
   { icon: '🌐', title: 'Custom websites', text: 'Modern, mobile-first sites that load instantly and make a great first impression.', href: '#websites' },
   { icon: '🧩', title: 'Web apps & internal tools', text: 'Booking systems, dashboards, order trackers, the custom tool you wish existed.', href: '#websites' },
   { icon: '🛡️', title: 'Care & support', text: 'Hosting help, updates, backups and fixes, so it keeps working after launch.', href: '#security' },
@@ -61,6 +61,7 @@ const faqs = [
   ['Do you only build POS and inventory systems?', 'They are our specialty and a big part of what we do, but we also build custom websites, web apps and internal tools. If it needs to look modern, load fast and be built securely, we can help.'],
   ['What does the trial run involve?', 'We build a working first version based on our conversation and let you use it for real. If it is not right, we change it. You only move forward once you are happy.'],
   ['How long until I can see something working?', 'Because we build lean, fast-loading software on a modern stack, first working versions come together quickly. Days to a couple of weeks, not months, depending on scope.'],
+  ['Do pharmacies have to enter all their medicines manually?', 'No. Our medical store POS uses the latest DRAP data for its medicine catalogue, so you can start with your catalogue already in place instead of typing it in.'],
   ['Do I need special hardware for POS?', 'No. It runs in a normal browser on a laptop, tablet or phone, and works with common receipt printers and barcode scanners.'],
   ['How do you handle security?', 'Security is part of how we build, not an add-on: encrypted connections, validated input, role-based access, secure handling of secrets, regular updates and backups. See the security section above for details.'],
   ['What if I need changes later?', 'That is expected. Maintenance and support is part of how we work, and we add features as your business grows.'],
@@ -125,7 +126,7 @@ const faqs = [
         </div>
       </div>
       <div class="wrap paths" aria-label="Choose what you need">
-        <a class="path" href="#pos"><span class="icon" aria-hidden="true">🛒</span><span><b>I run a shop</b><small>I need POS and inventory software</small></span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="path" href="#pos"><span class="icon" aria-hidden="true">🛒</span><span><b>I run a shop</b><small>POS and inventory, including medical stores</small></span><span class="arrow" aria-hidden="true">→</span></a>
         <a class="path" href="#websites"><span class="icon" aria-hidden="true">🌐</span><span><b>I need a website</b><small>Or a custom web app or tool</small></span><span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </section>
@@ -161,6 +162,16 @@ const faqs = [
         <ul class="pain reveal">
           {pains.map((p) => <li>{p}</li>)}
         </ul>
+        <aside class="spotlight reveal" aria-labelledby="pharmacy-title">
+          <span class="tag-inline">Medical store POS</span>
+          <h3 id="pharmacy-title">Running a pharmacy? Your medicine catalogue is already built.</h3>
+          <p>Our medical store POS uses the latest DRAP (Drug Regulatory Authority of Pakistan) data for its medicine catalogue, so you do not have to enter your medicines by hand.</p>
+          <ul>
+            <li>No manual data entry for thousands of medicines</li>
+            <li>Start selling from day one</li>
+            <li>Batch and expiry tracking, plus low-stock alerts</li>
+          </ul>
+        </aside>
         <h3 class="sub reveal">One system for your stock, your till and your numbers</h3>
         <div class="grid c3">
           {features.map((f) => (
